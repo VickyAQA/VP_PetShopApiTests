@@ -117,12 +117,12 @@ class TestPet:
             pet_id = create_pet["id"]
 
         with allure.step("Отправка запроса на обновление данных о питомце"):
-                payload = {
-                    "id": pet_id,
-                    "name": "Buddy Updated",
-                    "status": "sold"
-                }
-                response = requests.put(url=f"{BASE_URL}/pet", json=payload)
+            payload = {
+                "id": pet_id,
+                "name": "Buddy Updated",
+                "status": "sold"
+            }
+            response = requests.put(url=f"{BASE_URL}/pet", json=payload)
         with allure.step("Проверка статуса ответа и данных о питомце"):
             assert response.status_code == 200
             assert response.json()["id"] == pet_id
@@ -149,6 +149,3 @@ class TestPet:
 
         with allure.step("Проверка текстового содержимого ответа"):
             assert response.text == "Pet not found", "Текст ошибки не совпал с ожидаемым"
-
-
-

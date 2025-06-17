@@ -1,10 +1,13 @@
-STORE_SCHEMA = {
+INVENTORY_SCHEMA = {
     "type": "object",
     "properties": {
         "approved": {
             "type": "integer"
         },
         "delivered": {
+            "type": "integer"
+        },
+        "placed": {
             "type": "integer"
         }
     },
